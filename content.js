@@ -55,8 +55,7 @@
   let dragging = false,
     start = null,
     end = null,
-    ctrlHeld = false,
-    snappedFinal = false;
+    ctrlHeld = false;
 
   function resizeCanvas() {
     const dpr = window.devicePixelRatio || 1;
@@ -91,15 +90,17 @@
   }
 
   function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    if (!start || !end) return;
-    let drawEnd = end;
-    let shownAngle = angleDeg(start, end);
-    if (ctrlHeld || snappedFinal) {
-      const snapped = snap90(start, end);
-      drawEnd = { x: snapped.x, y: snapped.y };
-      shownAngle = snapped.deg;
-    }
+     ctx.clearRect(0, 0, canvas.width, canvas.height);
+  if (!start || !end) return;
+
+  let drawEnd = end;
+  let shownAngle = angleDeg(start, end);
+
+  if (ctrlHeld && dragging) { // snapping only while dragging
+    const snapped = snap90(start, end);
+    drawEnd = { x: snapped.x, y: snapped.y };
+    shownAngle = snapped.deg;
+  }
 
     ctx.lineWidth = 2;
     ctx.strokeStyle = "rgba(255,200,0,0.95)";
@@ -150,14 +151,19 @@
     ctrlHeld = e.ctrlKey || e.metaKey;
     draw();
   }
-  function onPointerUp(e) {
-    if (!dragging) return;
-    end = getMousePos(e);
-    ctrlHeld = e.ctrlKey || e.metaKey;
-    dragging = false;
-    if (ctrlHeld) snappedFinal = true;
-    draw();
+  function onPointerUp(e) { 
+  if (!dragging) return; 
+  end = getMousePos(e); 
+  ctrlHeld = e.ctrlKey || e.metaKey; 
+  dragging = false; 
+
+  if (ctrlHeld) {
+    const snapped = snap90(start, end);
+    end = { x: snapped.x, y: snapped.y };
   }
+
+  draw(); 
+}
 
   function onKeyDown(e) {
     if (e.key === "Escape") {
