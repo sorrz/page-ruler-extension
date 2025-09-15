@@ -47,23 +47,6 @@
   info.innerText = "Click and drag to draw — hold Ctrl to snap to 90° — Esc to close";
   container.appendChild(info);
 
-  // --- Close button ---
-  const closeBtn = document.createElement('button');
-  closeBtn.textContent = 'Close Ruler';
-  Object.assign(closeBtn.style, {
-    position: 'fixed',
-    right: '12px', top: '12px',
-    zIndex: 2147483648,
-    padding: '6px 10px',
-    border: 'none',
-    borderRadius: '6px',
-    background: 'rgba(0,0,0,0.7)',
-    color: 'white',
-    cursor: 'pointer'
-  });
-  closeBtn.addEventListener('click', cleanup);
-  container.appendChild(closeBtn);
-
   // --- State ---
   let dragging = false, start = null, end = null, ctrlHeld = false;
 
@@ -168,5 +151,5 @@
   window.__pageRulerCleanup = cleanup;
 
   draw();
-  console.log("Page ruler active. Click+drag to draw; hold Ctrl to snap 90°. Esc or 'Close Ruler' to remove.");
+  console.log("Page ruler active. Click+drag to draw; hold Ctrl to snap 90°. Esc to remove.");
 })();
