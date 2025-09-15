@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Page Ruler",
+  "description": "Draw rulers on any webpage.",
+  "version": "1.0",
+  "icons": {
+    "48": "icon.png"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_title": "Activate Page Ruler"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "activate-ruler": {
+      "suggested_key": {
+        "default": "Alt+G"
+      },
+      "description": "Activate Page Ruler"
+    }
+  }
+}
