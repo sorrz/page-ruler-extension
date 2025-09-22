@@ -9,8 +9,8 @@ Click and drag to measure pixel distances, hold **Ctrl** to snap lines to 90°, 
 - Draw rulers by clicking and dragging across any webpage
 - Snap to **90° angles** with Ctrl (or Command on Mac)
 - See live **pixel distance** and **angle**
-- Easy to close (Esc key or Close button)
-- Works via toolbar button **or keyboard shortcut (Ctrl+G)**
+- Easy to close (Esc key)
+- Works via toolbar button **or keyboard shortcut (Alt+G)**
 
 ---
 
