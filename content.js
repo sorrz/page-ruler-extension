@@ -1,12 +1,13 @@
 (() => {
-  if (window.__pageRulerActive) {
-    console.warn("Ruler already active. Press Esc to remove.");
+  var container = document.getElementById("page-ruler-container");
+  if (container != null) {
+    document.documentElement.removeChild(container);
     return;
   }
-  window.__pageRulerActive = true;
+
+  container = document.createElement("div");
 
   // --- Create overlay container ---
-  const container = document.createElement("div");
   Object.assign(container.style, {
     position: "fixed",
     left: 0,
@@ -17,6 +18,7 @@
     pointerEvents: "auto",
     cursor: "crosshair",
   });
+  container.id = "page-ruler-container";
   document.documentElement.appendChild(container);
 
   // --- Canvas ---
