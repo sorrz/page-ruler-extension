@@ -40,7 +40,7 @@ If you fork this repo and want to load the extension locally in Chrome:
 
 - You’ll see a new extension icon in your toolbar.
 
-- Click the icon or press Ctrl+G to activate the ruler.
+- Click the icon or press Alt+G to activate the ruler.
 
 - Draw on any page and press Esc to remove it.
 
