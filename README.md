@@ -82,7 +82,8 @@ Press R / B / V / H to choose a tool
 
 Draw on any page and press Esc to remove it
 
-Project Structure
+###Project Structure
+```
 page-ruler-extension/
 ├── manifest.json      # Extension config
 ├── background.js      # Handles activation & keyboard shortcut
@@ -92,4 +93,6 @@ page-ruler-extension/
 ├── horizontal.js      # Horizontal lines overlay
 ├── selector.js        # Tool selection overlay
 ├── icon.png           # Toolbar icon (optional, replace with your own)
+└── README.md
+```
 └── README.md
