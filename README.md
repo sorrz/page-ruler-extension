@@ -51,7 +51,7 @@ cd page-ruler-extension
 - Navigate to chrome://extensions/ in your browser
 - Enable Developer mode (toggle in the top-right corner)
 
-3- **Load the extension**
+3 **Load the extension**
 
 - Click Load unpacked
 - Select the folder containing this project (page-ruler-extension)
