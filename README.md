@@ -95,4 +95,3 @@ page-ruler-extension/
 ├── icon.png           # Toolbar icon (optional, replace with your own)
 └── README.md
 ```
-└── README.md
